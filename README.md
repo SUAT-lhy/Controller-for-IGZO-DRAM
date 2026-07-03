@@ -6,7 +6,11 @@ This repository focuses on the controller/readout side of the project. It exclud
 
 ## What Is IGZO DRAM?
 
-IGZO DRAM uses indium gallium zinc oxide thin-film transistors as memory access or storage devices. IGZO TFTs can provide very low off-state leakage, making them attractive for long-retention capacitorless or low-capacitance memory cells and for monolithic 3D integration above CMOS logic. In this project, the CMOS die acts as the controller/readout/test platform for future BEOL IGZO memory integration.
+IGZO DRAM uses indium gallium zinc oxide thin-film transistors as memory access or storage devices. IGZO TFTs offer very low off-state leakage, BEOL-compatible low-temperature processing, and monolithic 3D integration potential above CMOS logic. These properties make IGZO attractive for dense memory arrays with long retention, low standby power, and analog/multi-level storage.
+
+In a multi-level IGZO memory concept, one cell can be programmed and sensed at several distinct current or conductance levels instead of only binary 0/1 states. A 4-bit/cell target would require 16 reliably separable levels. That is attractive for density and in-memory-compute weight storage, but it is also much harder for a first silicon vehicle because the usable current window must survive device variation, retention drift, parasitics, sense-amplifier/DAC mismatch, and PVT corners.
+
+This project therefore uses a risk-reduced validation target: robust four-level sensing, or 2-bit/cell, while the digital controller reconstructs INT4 values from two 2-bit slices. In this project, the CMOS die acts as the controller/readout/test platform for future BEOL IGZO memory integration.
 
 ## Design Concept
 
