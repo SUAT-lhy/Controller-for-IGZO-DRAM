@@ -366,7 +366,7 @@ README 应短一些，避免放入 PDK、foundry 私有信息、完整 tapeout �
 ## 10. Clean 交接包路径
 
 ```text
-D:\MY WORK\2026年项目\IGZO DRAM\流片GDS-codex\frontend_handoff_clean_20260703
+frontend_handoff_clean_20260703/
 ```
 
 建议后端团队从该目录开始阅读：
@@ -377,4 +377,3 @@ D:\MY WORK\2026年项目\IGZO DRAM\流片GDS-codex\frontend_handoff_clean_202607
 4. `netlist/digital_top_innovus.v`
 5. `top_wrapper/igzo_testchip_top_sp018n.v`
 6. `backend_reference/`
-

@@ -10,15 +10,35 @@ IGZO DRAM uses indium gallium zinc oxide thin-film transistors as memory access 
 
 ## Design Concept
 
-The current risk-reduced chip target is:
+The current risk-reduced chip target separates **memory-state sensing** from
+**INT4 weight reconstruction**.
+
+Instead of asking one IGZO cell to provide 16 reliably distinguishable current
+levels, this validation chip only asks one cell/slice to provide four current
+levels. Four levels correspond to a 2-bit symbol:
 
 ```text
-2-bit/cell open-loop IGZO storage
-two 2-bit slices rebuild one INT4 weight
-INT4 = {high_2b, low_2b}
+one IGZO cell/slice -> 4 analog current levels -> 2-bit symbol {0,1,2,3}
 ```
 
-The analog side only needs robust four-level current sensing. Full INT4 reconstruction is handled digitally.
+An INT4 weight is then represented by two such 2-bit symbols:
+
+```text
+low_2b  = lower two bits of the INT4 weight
+high_2b = upper two bits of the INT4 weight
+
+INT4[3:0] = {high_2b[1:0], low_2b[1:0]}
+          = low_2b + 4 * high_2b
+```
+
+The analog front-end therefore only needs robust four-level current sensing for
+each slice. The full 4-bit value is reconstructed in the digital controller by
+capturing the low/high thermometer outputs, decoding each into a 2-bit symbol,
+and concatenating the two symbols into one INT4 word.
+
+This is the main first-silicon risk reduction: the chip can validate the IGZO
+readout path with a 2-bit/cell target while still exposing an INT4 digital
+interface to the MAC and status/readback logic.
 
 ## System Architecture
 
