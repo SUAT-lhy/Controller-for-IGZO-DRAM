@@ -1,0 +1,26 @@
+{
+  "corner": "pilot",
+  "description": "Xu/IMECAS pilot IGZO process; useful as measured baseline, not for DRAM retention signoff.",
+  "geometry": {
+    "W_um": 0.5,
+    "L_um": 0.5,
+    "Csn_F": 5e-15
+  },
+  "oxide": {
+    "tox_m": 1e-8,
+    "epsox_nominal": 22.0,
+    "epsox_sweep": [20.0, 22.0, 25.0],
+    "cox_fF_per_um2": 19.5
+  },
+  "dc": {
+    "vth_V": 0.63,
+    "ss_mV_dec": 96.0,
+    "ion_A_per_um": 6.5e-5,
+    "ioff_A_per_um": 1e-14,
+    "mu_cm2_Vs": 20.0
+  },
+  "retention": {
+    "delta_v_limit_V": 0.1,
+    "tret_s_at_Csn5fF_W0p5um": 0.1
+  }
+}

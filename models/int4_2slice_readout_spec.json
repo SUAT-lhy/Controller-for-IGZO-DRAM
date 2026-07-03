@@ -1,0 +1,67 @@
+{
+  "name": "int4_2slice_2bit_cell_readout",
+  "status": "behavioral_spec_for_cmos_readout_design",
+  "weight_mapping": {
+    "equation": "INT4 = low_2b + 4 * high_2b",
+    "cells_per_weight": 2,
+    "low_slice_weight": 1,
+    "high_slice_weight": 4
+  },
+  "cell_programming": {
+    "mode": "2bit_open_loop",
+    "write_model": "full_swing",
+    "symbol_to_wbl_v": {
+      "0": 0.35,
+      "1": 0.60,
+      "2": 0.85,
+      "3": 1.10
+    },
+    "pessimistic_corner": "vth_drop"
+  },
+  "readout_frontend": {
+    "type": "2bit_current_sense_with_cds",
+    "per_slice_outputs": 2,
+    "comparators_per_slice": 3,
+    "reference_currents_a": {
+      "t01": 1.089349670121223e-6,
+      "t12": 3.3875600896911305e-6,
+      "t23": 6.550044871432836e-6
+    },
+    "nominal_symbol_currents_a": {
+      "0": 2.536781526291597e-7,
+      "1": 1.9250211876132862e-6,
+      "2": 4.850098991768975e-6,
+      "3": 8.249990751096698e-6
+    },
+    "decoder": {
+      "thermometer_to_binary": {
+        "000": 0,
+        "100": 1,
+        "110": 2,
+        "111": 3
+      }
+    }
+  },
+  "recommended_timing": [
+    "precharge_or_bias_rbl",
+    "sample_cds_reference",
+    "enable_selected_rwl_and_cell",
+    "integrate_or_settle_irbl",
+    "sample_signal",
+    "compare_against_t01_t12_t23",
+    "decode_low_slice_and_high_slice",
+    "combine_int4_as_high_low"
+  ],
+  "monte_carlo_assumptions": {
+    "sigma_vth_v": 0.025,
+    "sigma_sa_relative_after_cds": 0.015,
+    "absolute_offset_a": "to_be_replaced_by_transistor_level_sa"
+  },
+  "latest_behavioral_result": {
+    "samples_per_value": 20000,
+    "value_error_rate": 2.5e-5,
+    "symbol_error_rate": 1.25e-5,
+    "bit_error_rate": 6.25e-6,
+    "worst_margin_sigma": 6.847897307228024
+  }
+}

@@ -1,0 +1,53 @@
+# Generated build/simulation artifacts
+*.vcd
+*.vvp
+*.fsdb
+*.wlf
+*.log
+*.rpt
+*.jou
+*.str
+*.spef
+*.sdf
+*.def
+*.gds
+*.gdsii
+*.oas
+*.db
+*.lib
+*.lef
+*.cdl
+*.sp
+*.spi
+*.raw
+
+# Archives and large generated packages
+*.zip
+*.tar
+*.tgz
+*.tar.gz
+*.rar
+*.7z
+
+# Foundry/private collateral: do not publish PDKs or signoff decks
+PDK/
+pdk/
+Calibre/
+calibre/
+decks/
+rule_decks/
+SP018N*/
+SMIC*/
+
+# Python/cache/editor state
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+venv/
+.idea/
+.vscode/
+
+# OS files
+Thumbs.db
+.DS_Store

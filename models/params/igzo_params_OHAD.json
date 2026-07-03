@@ -1,0 +1,33 @@
+{
+  "corner": "OHAD",
+  "description": "IEDM 2023 OHAD target corner for retention and system-performance analysis.",
+  "geometry": {
+    "W_um": 0.5,
+    "L_um": 0.5,
+    "Csn_F": 5e-15
+  },
+  "oxide": {
+    "tox_m": 1e-8,
+    "epsox_nominal": 22.0,
+    "epsox_sweep": [20.0, 22.0, 25.0],
+    "cox_fF_per_um2": 19.5
+  },
+  "dc": {
+    "vth_V": 0.23,
+    "ss_mV_dec": 74.9,
+    "ion_A_per_um": 3.5e-5,
+    "ioff_A_per_um": 1e-19,
+    "mu_cm2_Vs": 20.0,
+    "rc_ohm_um": 1700
+  },
+  "retention": {
+    "delta_v_limit_V": 0.1,
+    "tret_s_at_Csn5fF_W0p5um": 10000.0
+  },
+  "variation": {
+    "sigma_vth_V": 0.025,
+    "sigma_ion_frac": 0.04,
+    "pbs_delta_vth_V_at_4V_1000s": 0.1352,
+    "nbs_delta_vth_V_at_minus2V_1000s": -0.0525
+  }
+}
