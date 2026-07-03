@@ -87,8 +87,7 @@ rtl/             SystemVerilog RTL for the digital controller
 tb/              Directed Verilog testbenches
 constraints/     Timing constraints for digital_top
 models/          IGZO behavioral, retention, margin, and INT4 readout models
-docs/            Architecture, register map, pad list, bring-up, and handoff docs
-docs/zh/         Chinese detailed frontend design document
+docs/            Public design, interface, validation, and BEOL integration docs
 ```
 
 ## Main RTL Blocks
@@ -124,11 +123,11 @@ scan_bypass_mux.sv
 Start with:
 
 ```text
-docs/digital_specs_v1.md
-docs/register_map_v1.md
-docs/pad_list_v1.md
-docs/bringup_procedure_v1.md
-docs/zh/frontend_design_detail_zh_20260703.md
+docs/README.md
+docs/design/architecture_and_specs_v1.md
+docs/interfaces/register_map_v1.md
+docs/interfaces/pad_list_v1.md
+docs/validation/bringup_procedure_v1.md
 ```
 
 ## Status
