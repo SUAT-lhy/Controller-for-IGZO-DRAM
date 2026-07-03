@@ -22,6 +22,3 @@ This folder contains the public, handoff-oriented documentation for the IGZO DRA
 6. [integration/beol_landing_spec_v1.md](integration/beol_landing_spec_v1.md)
    Initial BEOL IGZO landing-pad and daisy-chain integration plan.
 
-## Removed Legacy Material
-
-The old `zh/` folder and phase-code execution reports were removed from the public documentation tree. They were either internal handoff notes, encoded poorly for GitHub display, or named by development phase rather than by reader intent. The public docs now favor stable topic names and direct handoff value.
